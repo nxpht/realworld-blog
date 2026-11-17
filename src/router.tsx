@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Article from "./pages/Article";
+import ArticlePage from "./pages/ArticlePage";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       },
       {
         path: "articles/:slug",
-        element: <Article />,
+        element: <ArticlePage />,
       },
     ],
   },

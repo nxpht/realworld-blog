@@ -42,3 +42,7 @@ export type ArticlesResponse = {
   articles: Article[];
   articlesCount: number;
 };
+
+export type ArticleResponse = {
+  article: Article;
+};

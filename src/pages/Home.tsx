@@ -2,7 +2,7 @@ import Pagination from "@mui/material/Pagination";
 import { useState, useEffect } from "react";
 import type { Article, ArticlesResponse } from "../api/types";
 import ArticlePreview from "../components/ArticlePreview";
-import Container from "@mui/material/Container";
+import Container from "../components/Container";
 import Banner from "../components/Banner";
 
 const ARTICLES_PER_PAGE = 3;
@@ -45,7 +45,7 @@ function Home() {
     <>
       <Banner />
       <section>
-        <Container>
+        <Container className="">
           <div className="flex flex-col gap-4 my-5">
             {error && <p>{error}</p>}
             {loading ? (
