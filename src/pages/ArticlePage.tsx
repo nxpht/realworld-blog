@@ -3,7 +3,8 @@ import remarkGfm from "remark-gfm";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import type { Article, ArticleResponse } from "../api/types";
-
+import Container from "../components/Container";
+import AuthorMeta from "../components/AuthorMeta";
 function ArticlePage() {
   const { slug } = useParams();
   const [article, setArticle] = useState<Article>();
@@ -34,9 +35,20 @@ function ArticlePage() {
   if (error) return <p>{error}</p>;
   if (!article) return null;
   return (
-    <div className="prose max-w-none">
-      <Markdown remarkPlugins={[remarkGfm]}>{article.body}</Markdown>
-    </div>
+    <>
+      <section className="bg-heading py-10 text-white mt-[118px]">
+        <Container className="">
+          <h1 className="text-5xl mb-5">{article.title}</h1>
+          <AuthorMeta author={article.author} date={article.createdAt} variant="dark" />
+        </Container>
+      </section>
+
+      <Container className="">
+        <div className="prose max-w-none mt-8">
+          <Markdown remarkPlugins={[remarkGfm]}>{article.body}</Markdown>
+        </div>
+      </Container>
+    </>
   );
 }
 

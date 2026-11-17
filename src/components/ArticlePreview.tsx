@@ -11,7 +11,7 @@ function ArticlePreview({ article }: ArticlePreviewProps) {
   return (
     <article className="border border-muted rounded-lg p-5 ">
       <div className="flex justify-between items-center">
-        <AuthorMeta author={article.author} date={article.createdAt} />
+        <AuthorMeta author={article.author} date={article.createdAt} variant="light" />
         <button
           disabled
           className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-lg border border-brand text-sm text-brand"
