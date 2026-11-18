@@ -2,15 +2,22 @@ import { Link, NavLink } from "react-router";
 import Container from "./Container";
 function Navbar() {
   return (
-    <nav className="py-2 border-b">
+    <nav className="py-2 border-b border-black/10">
       <Container className="flex justify-between items-center">
-        <Link to="/" className="font-700 text-2xl text-[#61BB61]">
+        <Link to="/" className="font-bold text-2xl text-brand">
           RealWorld Blog
         </Link>
         <ul className="flex gap-3">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/login">Sign In</NavLink>
-          <NavLink to="/signup">Sign Up</NavLink>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            {" "}
+            <NavLink to="/login">Sign In</NavLink>
+          </li>
+          <li>
+            <NavLink to="/signup">Sign Up</NavLink>
+          </li>
         </ul>
       </Container>
     </nav>

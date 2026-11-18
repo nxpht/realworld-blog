@@ -46,3 +46,7 @@ export type ArticlesResponse = {
 export type ArticleResponse = {
   article: Article;
 };
+
+export type TagsResponse = {
+  tags: string[];
+};
