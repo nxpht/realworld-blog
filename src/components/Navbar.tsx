@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router";
 import Container from "./Container";
 function Navbar() {
   return (
-    <nav className="py-2">
+    <nav className="py-2 border-b">
       <Container className="flex justify-between items-center">
         <Link to="/" className="font-700 text-2xl text-[#61BB61]">
           RealWorld Blog

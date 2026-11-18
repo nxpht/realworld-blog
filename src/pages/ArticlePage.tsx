@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import type { Article, ArticleResponse } from "../api/types";
 import Container from "../components/Container";
+import ArticleActions from "../components/ArticleActions";
 import AuthorMeta from "../components/AuthorMeta";
 function ArticlePage() {
   const { slug } = useParams();
@@ -46,6 +47,17 @@ function ArticlePage() {
       <Container className="">
         <div className="prose max-w-none mt-8">
           <Markdown remarkPlugins={[remarkGfm]}>{article.body}</Markdown>
+        </div>
+        <div className="flex items-center gap-2 mt-5 mb-5">
+          {article.tagList.map((tag) => (
+            <div className="tag" key={tag}>
+              {tag}
+            </div>
+          ))}
+        </div>
+        <div className="flex gap-2 justify-center">
+          <AuthorMeta author={article.author} date={article.createdAt} variant="light" />
+          <ArticleActions />
         </div>
       </Container>
     </>
